@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>P. Ramlee Music</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="circle">
+    <img src="pram.jpg" alt="Profile Picture">
+  </div>
+
+  <div class="music-player">
+    <h1>P. Ramlee Music</h1>
+    <audio id="audio" controls></audio>
+    <ul id="playlist">
+      <li><a href="Malam Ku Bermimpi.mp3">Malam Ku Bermimpi</a></li>
+      <li><a href="Mengapa Dirindu.mp3">Mengapa Dirindu</a></li>
+      <li><a href="Dendang Perantau.mp3">Dendang Perantau</a></li>
+      <li><a href="Getaran Jiwa.mp3">Getaran Jiwa</a></li>
+      <li><a href="Itulah Sayang.mp3">Itulah Sayang</a></li>
+      <li><a href="Yang Mana Satu Idaman Kalbu.mp3">Yang Mana Satu Idaman Kalbu</a></li>
+    </ul>
+  </div>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.circle {
+  width: 100%;
+  height: 200px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+}
+
+.music-player {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: inline-block;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #2980b9;
+}
+</style>
+  <script src="scripts.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const playlist = document.getElementById('playlist');
+  const audio = document.getElementById('audio');
+
+  playlist.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (e.target.tagName === 'A') {
+      const song = e.target.getAttribute('href');
+      audio.src = song;
+      audio.autoplay = true; // Autoplay upon click
+    }
+  });
+});
+</script>
+<footer>
+  <p>© 2023 P. Ramlee Digital Library</p>
+</footer>
+
+</body>
+</html>
